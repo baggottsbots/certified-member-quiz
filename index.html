@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BASE:START (managed by Coding Agent — do not edit) -->
+<base href="/certified-member-quiz/">
+<!-- BASE:END -->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+
+<meta name="theme-color" content="#000000">
+
+
+<!-- SEO Meta Tags -->
+<title>Get Certified | SuperStack OS powered by PayMeGPT</title>
+<meta name="description" content="Private SMS-gated member workspace where SuperStack OS members answer three questions to earn their PayMeGPT certification." />
+<meta property="og:title" content="Get Certified | SuperStack OS powered by PayMeGPT" />
+<meta property="og:description" content="Private SMS-gated member workspace where SuperStack OS members answer three questions to earn their PayMeGPT certification." />
+<meta property="og:image" content="https://paymegpt.com/objects/generated-images/2/1794196009999-d574385c04130d81.png" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Get Certified | SuperStack OS powered by PayMeGPT" />
+<meta name="twitter:description" content="Private SMS-gated member workspace where SuperStack OS members answer three questions to earn their PayMeGPT certification." />
+<meta name="twitter:image" content="https://paymegpt.com/objects/generated-images/2/1794196009999-d574385c04130d81.png" />
+<!-- End SEO Meta Tags -->
+<meta name="sheet-data-url" content="https://paymegpt.com/api/public/landing-pages/9009/sheet-data">
+<meta name="sheet-rows-url" content="https://paymegpt.com/api/public/landing-pages/9009/sheet-rows">
+<meta name="sheet-writes-enabled" content="true">
+<meta name="sheet-allow-create" content="true">
+<meta name="sheet-allow-delete" content="false">
+<meta name="sheet-writable-columns" content="Name,Phone,Q1 Answer,Q1 Status,Q2 Answer,Q2 Status,Q3 Answer,Q3 Status,Questions Correct,Certified,Certified At">
+<script data-lp-token-hydrate>
+(function(){try{
+  var slug="lp-mw8q1bfi-s3niz";
+  var SITEK="";
+  var SK='lp_access_'+slug;
+  var map={access_token:'lp_pw_',allowlist_access_token:'lp_al_',pin_access_token:'lp_pin_',paywall_access_token:'lp_paid_'};
+  function siteTok(){try{return SITEK?localStorage.getItem(SITEK):null;}catch(e){return null;}}
+  var u=new URL(location.href);var found=null;var changed=false;
+  var PINP=true;
+  if(!PINP){try{localStorage.removeItem('lp_pin_'+slug);if(SITEK)localStorage.removeItem(SITEK);}catch(e){}}
+  Object.keys(map).forEach(function(p){var v=u.searchParams.get(p);if(v){found=v;try{if(PINP||p!=='pin_access_token'){localStorage.setItem(map[p]+slug,v);if(SITEK&&p==='pin_access_token')localStorage.setItem(SITEK,v);}}catch(e){}if(p==='pin_access_token'){try{sessionStorage.setItem('lp_fresh_'+slug,'1');}catch(e){}}u.searchParams.delete(p);changed=true;}});
+  if(found){try{sessionStorage.setItem(SK,found);}catch(e){}}
+  else{try{if(!sessionStorage.getItem(SK)){var t=localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();if(t)sessionStorage.setItem(SK,t);}}catch(e){}}
+  if(changed){try{history.replaceState(null,'',u.toString());}catch(e){}}
+  function getTok(){try{return sessionStorage.getItem(SK)||localStorage.getItem('lp_pw_'+slug)||localStorage.getItem('lp_al_'+slug)||localStorage.getItem('lp_pin_'+slug)||localStorage.getItem('lp_paid_'+slug)||siteTok();}catch(e){return null;}}
+  function needsToken(url,method){if(!url)return false;var s=String(url);var m=(method||'GET').toUpperCase();var isSheetWrite=(m==='POST'||m==='PATCH'||m==='PUT'||m==='DELETE')&&/\/sheet-rows(\/|$|\?)/.test(s);var isSheetRead=/\/sheet-data(\/|$|\?)/.test(s);var isLlm=/\/api\/landing-pages\/public\/[^/]+\/(llm|llm-config)(\/|$|\?)/.test(s);return isSheetWrite||isSheetRead||isLlm;}
+  if(window.fetch){var _f=window.fetch;window.fetch=function(input,init){try{var url=typeof input==='string'?input:(input&&input.url)||'';var method=(init&&init.method)||(input&&input.method)||'GET';if(needsToken(url,method)){var tok=getTok();if(tok){init=init||{};var h=new Headers(init.headers||(typeof input!=='string'?input.headers:undefined)||{});if(!h.has('X-Landing-Page-Token'))h.set('X-Landing-Page-Token',tok);init.headers=h;}}}catch(e){}return _f.call(this,input,init);};}
+  if(window.XMLHttpRequest){var _o=XMLHttpRequest.prototype.open;var _s=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(m,u){this.__lpM=m;this.__lpU=u;return _o.apply(this,arguments);};XMLHttpRequest.prototype.send=function(){try{if(needsToken(this.__lpU,this.__lpM)){var tok=getTok();if(tok)this.setRequestHeader('X-Landing-Page-Token',tok);}}catch(e){}return _s.apply(this,arguments);};}
+}catch(e){}})();
+</script>
+<style id="pmg-member-hide">body{visibility:hidden!important}</style>
+<script>
+(function(){
+  'use strict';
+  var cfg={"base":"https://paymegpt.com","slug":"lp-mw8q1bfi-s3niz","title":"Member Sign In","message":"Enter your mobile number and we will text you a 6-digit code to sign in.","buttonLabel":"Text Me My Code","accent":"#36D6B5","onAccent":"#000000","focusColor":"#243246","email":false,"sms":true,"collectName":"required","remember":{"persist":"session","seconds":43200}};
+  var endpoint=cfg.base+'/api/landing-pages/public/'+encodeURIComponent(cfg.slug);
+  var key='pmg-member:'+endpoint, token='', pending={}, verifiedEmail='', method='email', identifier='', nextSession=null;
+  var host, root, resolveReady;
+  var activeMemberId='', reloadAfterSignIn=false;
+  // This URL marker carries no authority. The server authenticates the parent
+  // before issuing a page-bound, one-use code. Ordinary standalone PIN storage
+  // is never read or overwritten by dashboard mode.
+  var dashboardMode=false,parentOrigin='',dashboardNonce='',dashboardLease=0,dashboardStopped=false,dashboardBusy=false;
+  var dashboardParams=new URLSearchParams(location.search);
+  if(window.parent!==window&&dashboardParams.get('pmg_dashboard')==='1'){
+    dashboardMode=true;
+    try{
+      var parentUrl=new URL(dashboardParams.get('pmg_parent')||'');
+      if(parentUrl.protocol==='https:')parentOrigin=parentUrl.origin;
+    }catch(e){}
+  }
+  var ready=new Promise(function(resolve){resolveReady=resolve;});
+  function clearStoredToken(){
+    try{sessionStorage.removeItem(key);}catch(e){}
+    try{localStorage.removeItem(key);}catch(e){}
+  }
+  function read(k){
+    if(dashboardMode)return '';
+    try{
+      if(k!==key)return sessionStorage.getItem(k)||'';
+      if(cfg.remember.persist==='none'){clearStoredToken();return '';}
+      if(cfg.remember.persist==='local'){sessionStorage.removeItem(key);return localStorage.getItem(key)||'';}
+      localStorage.removeItem(key);return sessionStorage.getItem(key)||'';
+    }catch(e){return '';}
+  }
+  function write(k,v){
+    if(dashboardMode)return;
+    if(k!==key){try{if(v)sessionStorage.setItem(k,v);else sessionStorage.removeItem(k);}catch(e){}return;}
+    if(!v||cfg.remember.persist==='none'){clearStoredToken();return;}
+    try{
+      var store=cfg.remember.persist==='local'?localStorage:sessionStorage;
+      var other=cfg.remember.persist==='local'?sessionStorage:localStorage;
+      other.removeItem(key);store.setItem(key,v);
+    }catch(e){}
+  }
+  token=read(key);
+  // One-use handoff ONLY for our own identity-change reload after a fresh PIN.
+  // A subsequent user refresh cannot reuse it, including in Every visit mode.
+  if(!dashboardMode)try{
+    var handoff=JSON.parse(sessionStorage.getItem(key+':reload')||'null');
+    sessionStorage.removeItem(key+':reload');
+    if(!dashboardMode&&cfg.remember.persist==='none'&&handoff&&typeof handoff.token==='string'&&
+      Date.now()>=handoff.at&&Date.now()-handoff.at<10000)token=handoff.token;
+  }catch(e){}
+  try{pending=JSON.parse(read(key+':pending')||'{}');if(!pending||typeof pending!=='object'||Array.isArray(pending))pending={};}catch(e){pending={};}
+  function savePending(){write(key+':pending',JSON.stringify(pending));}
+  function clearPending(){pending={};write(key+':pending','');}
+  async function api(path,body,useToken){
+    var headers={'Content-Type':'application/json'};
+    if(useToken&&token)headers['X-Landing-Page-Token']=token;
+    var controller=new AbortController(), timer=setTimeout(function(){controller.abort();},25000);
+    try{
+      var response=await fetch(endpoint+path,{method:body===undefined?'GET':'POST',headers:headers,credentials:'omit',cache:'no-store',signal:controller.signal,body:body===undefined?undefined:JSON.stringify(body)});
+      var data=await response.json().catch(function(){return {};});
+      if(!response.ok){
+        var error=new Error(data.message||data.error||'Unable to continue. Please try again.');
+        error.status=response.status;error.data=data;throw error;
+      }
+      return data;
+    }finally{clearTimeout(timer);}
+  }
+  function el(id){return root.getElementById(id);}
+  function status(text){el('status').textContent=text||'';}
+  function busy(value){root.querySelectorAll('button').forEach(function(button){button.disabled=value;});}
+  function screen(name){
+    ['login','code','choice','payment'].forEach(function(id){el(id).hidden=id!==name;});
+    status('');
+  }
+  function lock(){
+    if(!document.getElementById('pmg-member-hide')){
+      var style=document.createElement('style');style.id='pmg-member-hide';style.textContent='body{visibility:hidden!important}';document.head.appendChild(style);
+    }
+    host.hidden=false;root.querySelector('.backdrop').hidden=false;el('manage').hidden=true;el('cancel-subscription').hidden=true;
+  }
+  function login(message){
+    lock();screen('login');
+    method=cfg.email?'email':'sms';identifier='';el('identity').value='';
+    showMethod();
+    el('intro').textContent=cfg.message||(cfg.email&&cfg.sms?'Sign in with an email code or a text message code. Either one is enough.':cfg.email?'Sign in with an email code. No phone is required.':'Sign in with a text message code. No email is required.');
+    status(message);
+  }
+  function showMethod(){
+    el('identity').type=method==='email'?'email':'tel';
+    el('identity').autocomplete=method==='email'?'email':'tel';
+    el('identity-label').textContent=method==='email'?'Email address':'Phone number (with country code)';
+    el('switch').textContent=method==='email'?'Use SMS instead':'Use email instead';
+    el('switch').hidden=!(cfg.email&&cfg.sms)||!!pending.linking;
+    el('cancel-link').hidden=!pending.linking||!token;
+  }
+  function beginLink(){
+    if(dashboardMode){dashboardLock('Open the page in a new tab to link verified sign-in methods.');return;}
+    if(!(cfg.email&&cfg.sms))return;
+    pending={linking:true,phone:pending.phone};savePending();
+    lock();screen('login');method='email';el('identity').value='';showMethod();
+    el('intro').textContent='Optional: verify your email and phone to use either for the same records. Existing separate workspaces will not be merged.';
+  }
+  function approve(session){
+    if(!session.accessToken)throw new Error('No member session was returned. Please sign in again.');
+    token=session.accessToken;write(key,token);verifiedEmail=session.email||verifiedEmail;
+    clearPending();nextSession=null;
+    // Never reveal the previous member's rendered records after an identity
+    // change. Same-member expiry retains the draft, explicit sign-out does not.
+    if(reloadAfterSignIn||(activeMemberId&&session.memberId&&activeMemberId!==session.memberId)){
+      if(!dashboardMode&&cfg.remember.persist==='none'){
+        try{sessionStorage.setItem(key+':reload',JSON.stringify({token:token,at:Date.now()}));}catch(e){}
+      }
+      location.reload();return;
+    }
+    activeMemberId=session.memberId||activeMemberId;
+    root.querySelector('.backdrop').hidden=true;el('manage').hidden=dashboardMode||!(cfg.email&&cfg.sms);
+    refreshBilling();
+    var hidden=document.getElementById('pmg-member-hide');if(hidden)hidden.remove();
+    resolveReady(window.PMGMember);
+    window.dispatchEvent(new CustomEvent('pmg:member-ready',{detail:{email:verifiedEmail||undefined}}));
+    if(dashboardMode)window.parent.postMessage({type:'pmg:dashboard-state',ready:true,nonce:dashboardNonce},parentOrigin);
+  }
+  function refreshBilling(){
+    var billingToken=token;
+    api('/access-status',undefined,true).then(function(result){
+      if(token!==billingToken)return;
+      var sub=result.subscriptionInfo;
+      el('cancel-subscription').hidden=!sub||!!sub.canceledAt;
+    }).catch(function(){});
+  }
+  async function sessionResult(result,offerPhone){
+    var session=result.memberSession||result;
+    if(session.remember&&['local','none','session'].indexOf(session.remember.persist)!==-1)cfg.remember=session.remember;
+    if(session.email)verifiedEmail=session.email;
+    if(session.accessToken){token=session.accessToken;write(key,token);}
+    var returnUrl=new URL(location.href), checkoutId=returnUrl.searchParams.get('session_id');
+    if(checkoutId&&token){
+      var payment=await api('/paywall/verify',{sessionId:checkoutId},true);
+      session.paymentRequired=!payment.hasAccess;
+      if(payment.hasAccess){
+        returnUrl.searchParams.delete('session_id');returnUrl.searchParams.delete('email');
+        history.replaceState({},'',returnUrl.href);
+      }
+    }
+    if(session.paymentRequired){
+      lock();screen('payment');
+      el('intro').textContent='You are signed in. Payment is required to open your workspace.';
+      el('checkout').hidden=false;el('check-payment').hidden=false;
+      el('purchase-email').hidden=!(cfg.email&&cfg.sms)||!!session.email;
+      el('payment').querySelector('p').textContent='Checkout is linked to your verified membership. No email sign-in is required. An older email purchase can only be claimed by verifying and linking that email.';
+      refreshBilling();
+      return;
+    }
+    if(!session.accessToken)throw new Error('Sign-in could not be completed. Request a new code.');
+    approve(session);
+  }
+  async function resume(){
+    if(dashboardMode){dashboardRequest();return;}
+    // A refresh during optional linking must not turn the other identifier
+    // into an independent account before both proofs have been verified.
+    if(pending.linking)clearPending();
+    if(token){
+      var session=await api('/member/session',undefined,true);
+      await sessionResult(Object.assign({},session.memberSession||session,{accessToken:(session.memberSession||session).accessToken||token}),false);
+    }else if(pending.proof){
+      await sessionResult(await api('/member/session',{proofToken:pending.proof}),!!pending.email&&!pending.phone);
+    }else{login();}
+  }
+  async function action(fn){
+    busy(true);status('');
+    try{await fn();}
+    catch(error){
+      if(error.status===401){token='';write(key,'');clearPending();login('Your sign-in expired. Request a new code.');}
+      else if(error.status===402){
+        var denied=error.data&&(error.data.memberSession||error.data);
+        if(denied&&denied.email)verifiedEmail=denied.email;
+        if(token){await resume();}
+        else if(!pending.proof){login('Paid access is required. Sign in again to renew.');}
+        else {lock();screen('payment');status('Payment is required. Complete checkout, then check access.');}
+      }
+      else status(error.name==='AbortError'?'The request timed out. Please try again.':error.message||'Unable to connect. Please try again.');
+    }finally{busy(false);}
+  }
+  async function send(){
+    identifier=el('identity').value.trim();
+    if(!identifier)throw new Error(method==='email'?'Enter your email address.':'Enter a phone number with country code.');
+    var body=method==='sms'?{phone:identifier}:{email:identifier};
+    if(cfg.collectName!=='off')body.name=el('member-name').value.trim();
+    if(cfg.collectName==='required'&&!body.name)throw new Error('Enter your name.');
+    var result=await api('/generate-pin',body);
+    if(!result.success)throw new Error(result.message||'Could not send a code. Please try again.');
+    screen('code');el('sent').textContent='Enter the code sent to '+identifier+'.';el('pin').value='';el('pin').focus();
+  }
+  async function verify(){
+    var pin=el('pin').value.trim();
+    if(!/^[0-9]{6}$/.test(pin))throw new Error('Enter the six-digit code.');
+    var body=method==='sms'?{phone:identifier,pin:pin}:{email:identifier,pin:pin};
+    if(pending.linking)body.linkIdentity=true;
+    var result=await api('/verify-pin',body);
+    if(!result.verified||!result.memberProofToken)throw new Error(result.message||'Invalid or expired code. Request a new code.');
+    pending[method==='sms'?'phone':'email']=result.memberProofToken;
+    pending.proof=result.memberProofToken;savePending();
+    if(pending.linking&&pending.email&&pending.phone){
+      var linked=await api('/member/link',{emailToken:pending.email,phoneToken:pending.phone});
+      await sessionResult(linked,false);return;
+    }
+    if(pending.linking){
+      screen('login');method='sms';el('identity').value='';showMethod();
+      el('intro').textContent='Now verify the phone you want to use for these same records.';return;
+    }
+    await sessionResult(result.memberSession||await api('/member/session',{proofToken:result.memberProofToken}),method==='email');
+  }
+  async function signOut(){
+    if(dashboardMode)dashboardStopped=true;
+    try{if(token)await api('/member/logout',{},true);}
+    finally{
+      var url=new URL(location.href);url.searchParams.delete('session_id');url.searchParams.delete('email');history.replaceState({},'',url.href);
+      reloadAfterSignIn=true;token='';verifiedEmail='';write(key,'');clearPending();write(key+':reload','');
+      nextSession=null;if(dashboardMode)dashboardLock('Workspace signed out. Refresh the dashboard to reconnect, or open the page in a new tab.');else login('Signed out.');
+    }
+  }
+  window.addEventListener('storage',function(event){
+    if(dashboardMode)return;
+    if(cfg.remember.persist==='local'&&event.key===key&&event.oldValue!==event.newValue){
+      clearPending();write(key+':reload','');location.reload();
+    }
+  });
+  function dashboardLock(message){
+    if(!root)return;
+    token='';dashboardLease=0;
+    if(parentOrigin)window.parent.postMessage({type:'pmg:dashboard-state',ready:false,message:message||'Confirming your dashboard sign-in…'},parentOrigin);
+    lock();screen('login');el('login').hidden=true;el('restart').hidden=true;
+    el('intro').textContent='Dashboard workspace';
+    status(message||'Confirming your dashboard sign-in…');
+    var fallback=el('dashboard-fallback');
+    if(!fallback){
+      fallback=document.createElement('a');fallback.id='dashboard-fallback';
+      fallback.textContent='Open in a new tab for PIN sign-in';
+      fallback.style.cssText='display:block;margin-top:16px;min-height:44px;color:#245bbc;text-decoration:underline';
+      var standalone=new URL(location.href);standalone.searchParams.delete('pmg_dashboard');standalone.searchParams.delete('pmg_parent');
+      fallback.href=standalone.href;fallback.target='_blank';fallback.rel='noopener noreferrer';
+      root.querySelector('.card').appendChild(fallback);
+    }
+  }
+  function dashboardRequest(){
+    if(!dashboardMode||dashboardStopped||!parentOrigin||dashboardBusy)return;
+    if(!token)dashboardLock();
+    dashboardNonce=Array.from(crypto.getRandomValues(new Uint8Array(24))).map(function(n){return n.toString(16).padStart(2,'0');}).join('');
+    window.parent.postMessage({type:'pmg:dashboard-ready',nonce:dashboardNonce},parentOrigin);
+  }
+  window.addEventListener('message',async function(event){
+    if(!dashboardMode||!root||event.source!==window.parent||event.origin!==parentOrigin)return;
+    if(event.data&&event.data.type==='pmg:dashboard-denied'){dashboardNonce='';dashboardLock(event.data.message);return;}
+    if(event.data&&event.data.type==='pmg:dashboard-check'){dashboardRequest();return;}
+    if(dashboardStopped||dashboardBusy||!event.data||event.data.type!=='pmg:dashboard-exchange'||
+      !dashboardNonce||event.data.nonce!==dashboardNonce||typeof event.data.code!=='string')return;
+    var nonce=dashboardNonce;dashboardBusy=true;
+    try{
+      var session=await api('/member/dashboard-exchange',{code:event.data.code,nonce:nonce,parentOrigin:parentOrigin});
+      if(dashboardNonce!==nonce||dashboardStopped)return;
+      dashboardLease=Date.now()+Math.min(45,Number(session.expiresIn)||0)*1000;
+      await sessionResult(session,false);
+    }catch(error){dashboardLock(error.message||'Dashboard sign-in is unavailable.');}
+    finally{dashboardBusy=false;}
+  });
+  window.addEventListener('pagehide',function(){if(dashboardMode){dashboardNonce='';dashboardLock('Rechecking dashboard sign-in…');}});
+  window.addEventListener('pageshow',function(){if(dashboardMode&&root)dashboardRequest();});
+  document.addEventListener('visibilitychange',function(){
+    if(dashboardMode&&root){
+      if(document.hidden){dashboardNonce='';dashboardLock('Rechecking dashboard sign-in…');}
+      else dashboardRequest();
+    }
+  });
+  window.PMGMember={
+    token:function(){return token||null;},
+    ready:ready,
+    signOut:signOut,
+    linkSignInMethods:beginLink,
+    request:async function(url,options){
+      if(dashboardMode&&(!token||Date.now()>=dashboardLease)){
+        dashboardLock('Confirming your dashboard sign-in…');dashboardRequest();
+        throw new Error('Dashboard sign-in must be confirmed before accessing records.');
+      }
+      var target=new URL(url,location.href);
+      if(target.origin!==new URL(endpoint,location.href).origin)throw new Error('Member requests must use the configured API origin.');
+      var headers=new Headers(options&&options.headers);
+      if(token)headers.set('X-Landing-Page-Token',token);
+      var response=await fetch(target.href,Object.assign({},options,{headers:headers,credentials:'omit',cache:'no-store'}));
+      if(response.status===401||response.status===403||response.status===402){
+        if(dashboardMode){
+          token='';dashboardLock('Dashboard or paid workspace access is no longer available. Open the page in a new tab for PIN sign-in.');
+        }else if(response.status===402){
+          lock();await action(resume);
+        }else{
+          token='';write(key,'');clearPending();
+          login('Your session expired. Sign in again. Your unsaved text has not been changed.');
+        }
+      }
+      return response;
+    }
+  };
+  function mount(){
+    host=document.createElement('div');host.id='pmg-member-gate';
+    host.style.cssText='position:fixed;inset:0;z-index:2147483647;visibility:visible;pointer-events:none';
+    document.documentElement.appendChild(host);root=host.attachShadow({mode:'closed'});
+    root.innerHTML='<style>:host{color-scheme:light}*{box-sizing:border-box}[hidden]{display:none!important}.backdrop{height:100%;height:100dvh;overflow:auto;overscroll-behavior:contain;background:#f3f5f8;display:flex;flex-direction:column;align-items:center;padding:24px;padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));scroll-padding:24px;font:15px/1.5 system-ui,sans-serif;color:#243246}.card{width:100%;min-width:0;max-width:420px;flex-shrink:0;margin-block:auto;padding:28px;background:#fafbfd;border:1px solid #dbe2ea;border-radius:12px;box-shadow:0 10px 32px #24324612;overflow-wrap:anywhere}h1{font-size:22px;line-height:1.3;margin:0 0 10px}p{line-height:1.55;color:#526175}label{display:block;font-weight:600;margin:18px 0 7px}input,button{font:inherit;width:100%;min-width:0;min-height:44px;border-radius:7px;scroll-margin-block:24px}input{font-size:16px;border:1px solid #bbc7d6;padding:10px;background:#fafbfd;color:#243246}button{border:0;background:#245bbc;color:#f8fafc;padding:10px;margin-top:12px;cursor:pointer;font-weight:600;white-space:normal;overflow-wrap:anywhere;touch-action:manipulation}button.secondary{background:#e7edf5;color:#243246}button:disabled{opacity:.55;cursor:wait}input:focus-visible,button:focus-visible{outline:3px solid #245bbc;outline-offset:3px}#status{color:#994025;font-size:14px;min-height:20px;margin-bottom:0}@media(max-width:480px),(max-height:480px){.backdrop{padding:12px;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}.card{padding:20px}}</style><div class="backdrop"><section class="card" aria-label="Member sign-in"><h1 id="title"></h1><p id="intro">Checking your member session…</p><form id="login"><label id="identity-label" for="identity">Email address</label><input id="identity" type="email" autocomplete="email" aria-describedby="intro status" required><button type="submit">Send sign-in code</button><button type="button" class="secondary" id="switch">Use a linked phone instead</button></form><form id="code" hidden><p id="sent"></p><label for="pin">Six-digit code</label><input id="pin" inputmode="numeric" autocomplete="one-time-code" aria-describedby="sent status" pattern="[0-9]{6}" maxlength="6" required><button type="submit">Verify code</button><button type="button" class="secondary" id="resend">Resend code</button><button type="button" class="secondary" id="back">Use another address or phone</button></form><div id="choice" hidden><p>You are signed in. You can optionally link a verified phone for future sign-ins.</p><button id="continue">Open my workspace</button><button id="link-phone" class="secondary">Link a phone (optional)</button></div><div id="payment" hidden><p>Paid access is required for this workspace. Checkout uses your verified member email, not a typed address.</p><button id="checkout">Continue to checkout</button><button id="check-payment" class="secondary">I paid — check access</button></div><p id="status" role="status" aria-live="polite" aria-atomic="true"></p><button id="restart" class="secondary">Start over / sign out</button></section></div>';
+    el('title').textContent=cfg.title;
+    el('intro').style.whiteSpace='pre-line';
+    el('login').querySelector('button[type=submit]').textContent=cfg.buttonLabel;
+    host.style.setProperty('--member-accent',cfg.accent);
+    host.style.setProperty('--member-on-accent',cfg.onAccent);
+    host.style.setProperty('--member-focus',cfg.focusColor);
+    var branding=document.createElement('style');
+    branding.textContent='button:not(.secondary){background:var(--member-accent);color:var(--member-on-accent)}input:focus-visible,button:focus-visible{outline-color:var(--member-focus)}';
+    root.appendChild(branding);
+    root.querySelector('.backdrop').style.pointerEvents='auto';
+    var manage=document.createElement('button');manage.id='manage';manage.textContent='Link sign-in methods (optional)';manage.hidden=true;
+    manage.style.cssText='position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:max(16px,env(safe-area-inset-left));width:auto;max-width:calc(100% - max(16px,env(safe-area-inset-left)) - max(16px,env(safe-area-inset-right)));max-height:calc(100% - 32px);overflow:auto;margin:0;padding:10px 16px;pointer-events:auto';
+    manage.onclick=beginLink;root.appendChild(manage);
+    var cancelSub=document.createElement('button');cancelSub.id='cancel-subscription';cancelSub.textContent='Cancel subscription';cancelSub.hidden=true;
+    cancelSub.style.cssText='position:fixed;bottom:16px;right:16px;width:auto;max-width:45vw;pointer-events:auto';
+    cancelSub.onclick=function(){if(confirm('Cancel your subscription at the end of the current paid period?'))action(async function(){
+      await api('/paywall/cancel-subscription',{},true);cancelSub.hidden=true;
+    });};root.appendChild(cancelSub);
+    var purchaseEmail=document.createElement('button');purchaseEmail.id='purchase-email';purchaseEmail.textContent='Verify purchase email';purchaseEmail.hidden=true;purchaseEmail.onclick=beginLink;el('payment').appendChild(purchaseEmail);
+    var cancelLink=document.createElement('button');cancelLink.className='secondary';cancelLink.textContent='Back to my workspace';cancelLink.hidden=true;cancelLink.id='cancel-link';el('login').appendChild(cancelLink);cancelLink.type='button';
+    cancelLink.onclick=function(){clearPending();action(resume);};
+    if(cfg.collectName!=='off'){
+      var label=document.createElement('label');label.htmlFor='member-name';label.textContent='Your name'+(cfg.collectName==='required'?' (required)':' (optional)');
+      var nameInput=document.createElement('input');nameInput.id='member-name';nameInput.autocomplete='name';nameInput.maxLength=120;nameInput.required=cfg.collectName==='required';
+      el('login').prepend(nameInput);el('login').prepend(label);
+    }
+    el('switch').hidden=!(cfg.email&&cfg.sms);
+    el('login').addEventListener('submit',function(event){event.preventDefault();action(send);});
+    el('code').addEventListener('submit',function(event){event.preventDefault();action(verify);});
+    el('resend').onclick=function(){action(send);};
+    el('back').onclick=function(){clearPending();login();};
+    el('restart').onclick=function(){action(signOut);};
+    el('switch').onclick=function(){
+      method=method==='email'?'sms':'email';
+      clearPending();el('identity').value='';showMethod();status('');
+    };
+    el('continue').onclick=function(){action(async function(){approve(nextSession);});};
+    el('link-phone').onclick=beginLink;
+    el('checkout').onclick=function(){action(async function(){
+      if(!token)throw new Error('Sign in before checkout.');
+      var returnUrl=new URL(location.href);returnUrl.searchParams.delete('session_id');returnUrl.searchParams.delete('email');returnUrl.hash='';
+      var result=await api('/paywall/checkout',{successUrl:returnUrl.href,cancelUrl:returnUrl.href},true);
+      if(result.alreadyHasAccess){await resume();return;}
+      if(!result.checkoutUrl)throw new Error(result.message||'Checkout is unavailable. Please try again.');
+      var checkout=new URL(result.checkoutUrl);if(checkout.protocol!=='https:')throw new Error('Invalid checkout URL.');
+      location.assign(checkout.href);
+    });};
+    el('check-payment').onclick=function(){action(resume);};
+    screen('login');
+    if(dashboardMode){
+      dashboardLock();dashboardRequest();
+      setInterval(function(){if(!document.hidden)dashboardRequest();},20000);
+      setInterval(function(){if(token&&Date.now()>=dashboardLease)dashboardLock('Dashboard sign-in expired. Reconnecting…');},1000);
+    }else action(resume);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
+})();
+</script>
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=9009');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='WQVQkkK3';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    var phone=findPhone();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    var __pLoc=(document.documentElement.lang||navigator.language||'en');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,phone:phone||'',amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,locale:__pLoc,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var sidP=urlParams.get('session_id');
+      if(sidP){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidP})}).catch(function(){});}catch(e){}}
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||('Thank you for purchasing '+pName+'.');
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-pay-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var pBtn=document.getElementById('lp-pay-success-btn');
+      if(pBtn){pBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<script data-cart>
+(function(){
+  var slug='WQVQkkK3';
+  var apiBase='https://paymegpt.com';
+  var successSubtext='';var successBtnLabel='Continue';var successBtnColor='#16a34a';var successRedirect='';
+  function findCartEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  function findCartPhone(){var ids=['phone','phoneNumber','phone-number','tel','telephone','mobile','mobileNumber','cell','contact-phone','buyer-phone'];for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.trim())return el.value.trim();}var inputs=document.querySelectorAll('input[type="tel"],input[name*="phone"],input[name*="tel"],input[name*="mobile"],input[placeholder*="phone"],input[placeholder*="Phone"]');for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.trim())return inputs[j].value.trim();}return '';}
+  var __realCart=function(arg){
+    var items, email='', customerName='', successUrl, cancelUrl, currency;
+    if(Array.isArray(arg)){items=arg;}
+    else if(arg&&typeof arg==='object'){
+      items=arg.items;email=arg.email||'';customerName=arg.name||arg.customerName||'';
+      successUrl=arg.successUrl;cancelUrl=arg.cancelUrl;currency=arg.currency;
+    }
+    if(!Array.isArray(items)||items.length===0){alert('No items in cart.');return Promise.reject('no_items');}
+    var cleanItems=[];var totalCents=0;
+    for(var i=0;i<items.length;i++){
+      var it=items[i];if(!it||typeof it!=='object'){alert('Invalid item at position '+i);return Promise.reject('bad_item');}
+      var nm=typeof it.name==='string'?it.name.trim():'';
+      if(!nm){alert('Item '+(i+1)+' is missing a name.');return Promise.reject('no_name');}
+      var amt=typeof it.amountCents==='number'?it.amountCents:(typeof it.amount==='number'?Math.round(it.amount*100):NaN);
+      if(!isFinite(amt)||amt<1){alert('Item "'+nm+'" needs a valid amount in cents.');return Promise.reject('bad_amount');}
+      var qty=(typeof it.quantity==='number'&&it.quantity>0)?Math.floor(it.quantity):1;
+      cleanItems.push({name:nm,description:it.description||'',amountCents:amt,quantity:qty});
+      totalCents+=amt*qty;
+    }
+    if(totalCents<50){alert('Cart total must be at least $0.50');return Promise.reject('total_too_low');}
+    if(!email)email=findCartEmail();
+    if(!customerName)customerName=findCartName();
+    var cartPhone=findCartPhone();
+    if(!email){var p=window.prompt('Enter your email for the receipt:','');if(p&&p.indexOf('@')>-1){email=p.trim();}else{alert('An email address is required to complete checkout.');return Promise.reject('no_email');}}
+    var successBase=window.location.href.split('?')[0];
+    var body={email:email,name:customerName,items:cleanItems,locale:(document.documentElement.lang||navigator.language||'en')};
+    if(currency)body.currency=currency;
+    if(cartPhone)body.phone=cartPhone;
+    body.successUrl=successUrl||(successBase+'?cart=success&email='+encodeURIComponent(email)+'&session_id={CHECKOUT_SESSION_ID}');
+    body.cancelUrl=cancelUrl||(successBase+'?cart=cancelled');
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/cart/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(body)
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process checkout');throw new Error(d.error);}
+    });
+  };
+  try{Object.defineProperty(window,'__processCart',{value:__realCart,writable:false,configurable:false});}catch(e){window.__processCart=__realCart;}
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('cart')==='success'){
+      var sidC=urlParams.get('session_id');
+      if(sidC){try{fetch(apiBase+'/api/landing-pages/public/'+slug+'/checkout/confirm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:sidC})}).catch(function(){});}catch(e){}}
+      if(document.getElementById('payment-success-overlay')||document.getElementById('donation-success-overlay')||document.getElementById('cart-success-overlay'))return;
+      var overlay=document.createElement('div');overlay.id='cart-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      var subTxt=successSubtext||'Thank you for your order.';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;background:color-mix(in srgb,'+successBtnColor+' 12%,white);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="'+successBtnColor+'" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Order Confirmed!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">'+esc(subTxt)+'</p><button id="lp-cart-success-btn" style="padding:12px 32px;font-size:16px;font-weight:600;background:'+successBtnColor+';color:white;border:none;border-radius:8px;cursor:pointer;">'+esc(successBtnLabel)+'</button></div>';
+      document.body.appendChild(overlay);
+      var cBtn=document.getElementById('lp-cart-success-btn');
+      if(cBtn){cBtn.addEventListener('click',function(){if(successRedirect){window.location.href=successRedirect;}else{overlay.remove();window.history.replaceState({},'',window.location.pathname);}});}
+    }
+  });
+})();
+</script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar" data-section="navbar">
+  <div class="wrap">
+    <div class="brand">
+      <b>SuperStack OS</b>
+      <span>powered by <em>PayMeGPT</em></span>
+    </div>
+    <button class="ghost" id="signOutBtn" type="button">Sign out</button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- Loading -->
+    <section data-section="loading" id="viewLoading" class="center" aria-live="polite">
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="sub">Loading your workspace…</p>
+    </section>
+
+    <!-- Fatal error -->
+    <section data-section="error" id="viewError" hidden>
+      <div class="panel">
+        <h2 style="margin-top:0">We couldn't load your workspace</h2>
+        <div class="msg bad" id="errorText" role="alert"></div>
+        <button class="primary purple" id="retryBtn" type="button">Try again</button>
+      </div>
+    </section>
+
+    <!-- First visit: create the member's record -->
+    <section data-section="onboarding" id="viewOnboard" hidden>
+      <span class="eyebrow">Get Certified</span>
+      <h1>Welcome to <span class="grad">SuperStack OS</span></h1>
+      <p class="sub">This is your first visit. Tell us your name to create your private certification record.</p>
+      <form class="panel glow" id="onboardForm" novalidate>
+        <label class="fl" for="nameInput">Your name</label>
+        <input type="text" id="nameInput" name="name" autocomplete="name" maxlength="80" required>
+        <div class="msg bad" id="onboardError" role="alert" hidden></div>
+        <button class="primary" id="onboardBtn" type="submit">Start certification</button>
+      </form>
+    </section>
+
+    <!-- Quiz workspace -->
+    <section data-section="quiz-workspace" id="viewQuiz" hidden>
+      <span class="eyebrow">Get Certified</span>
+      <h1 id="welcomeTitle">Welcome</h1>
+      <p class="sub">Answer all three questions correctly to earn your SuperStack OS certification. Incorrect answers can be retried.</p>
+
+      <div class="panel glow" aria-label="Progress tracker">
+        <div class="bar-head"><span id="progressLabel">0 of 3 correct</span><small>Progress</small></div>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="barOuter"><i id="barFill"></i></div>
+        <div class="cards" id="cards"></div>
+      </div>
+
+      <div class="panel" id="quizPanel" aria-live="polite"></div>
+    </section>
+
+    <!-- Certified celebration -->
+    <section data-section="certified" id="viewCert" hidden>
+      <div class="panel glow cert">
+        <img id="trophy" src="https://paymegpt.com/objects/generated-images/2/1794196009999-d574385c04130d81.png" alt="Golden certification trophy">
+        <h1><span class="grad">YOU'RE CERTIFIED</span></h1>
+        <div class="who" id="certName"></div>
+        <p class="date" id="certDate"></p>
+        <div class="seal"><span class="t">SuperStack OS</span><span class="p">Powered by PayMeGPT</span></div>
+        <button class="ghost" id="replayBtn" type="button" style="margin-top:20px">🎉 Celebrate again</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<footer data-section="footer">
+  <div class="wrap">
+    <b>SuperStack OS</b> · powered by <em>PayMeGPT</em><br>
+    © 2026 SuperStack OS. Private member workspace.
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---------- Quiz content ---------- */
+  var QUESTIONS = [
+    { n:1, text:'Which sign-in method does this membership page use to verify who you are?',
+      options:['Email link','SMS PIN code','Social login','Password only'], correct:'SMS PIN code',
+      ans:'Q1 Answer', status:'Q1 Status' },
+    { n:2, text:'What acts as the database behind this membership page?',
+      options:['A Google Sheet','A text file','A spreadsheet in Excel desktop only','Browser cookies'], correct:'A Google Sheet',
+      ans:'Q2 Answer', status:'Q2 Status' },
+    { n:3, text:'Which platform powers this page, which is currently branded as SuperStack OS?',
+      options:['PayMeGPT','StreamYard','Notion','Zapier'], correct:'PayMeGPT',
+      ans:'Q3 Answer', status:'Q3 Status' }
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var views = ['viewLoading','viewError','viewOnboard','viewQuiz','viewCert'];
+  var state = { row:null, selected:0, choice:null, busy:false, feedback:null };
+  var dataUrl = '', rowsUrl = '';
+
+  function show(id){ views.forEach(function(v){ $(v).hidden = (v !== id); }); }
+  function meta(name){
+    var m = document.querySelector('meta[name="'+name+'"]');
+    return m ? m.getAttribute('content') : '';
+  }
+
+  /* ---------- API helpers (all via PMGMember.request) ---------- */
+  function errorFor(status, fallback){
+    if(status === 401) return 'Your session has expired. Please sign in again.';
+    if(status === 402) return 'Paid access is required to use this workspace.';
+    if(status === 403) return 'This action is not allowed. If you are the page owner, enable adding and editing in the Linked Sheet settings (Members tab) so members can save their answers; otherwise your access may be blocked.';
+    if(status === 409) return 'Your record changed elsewhere. Your selection was kept — reload your record and submit again.';
+    return fallback;
+  }
+  async function loadRow(){
+    var response = await PMGMember.request(dataUrl, { method:'GET' });
+    if(!response.ok){ var e = new Error(errorFor(response.status,'Could not load records (error '+response.status+').')); e.status = response.status; throw e; }
+    var result = await response.json();
+    if(!result || !Array.isArray(result.data)) throw new Error('Unexpected response from the server.');
+    return result.data.length ? result.data[0] : null; // server returns only this member's records
+  }
+  async function writeRow(method, url, body, fallback){
+    var response = await PMGMember.request(url, {
+      method: method,
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify(body)
+    });
+    if(!response.ok){ var e = new Error(errorFor(response.status, fallback)); e.status = response.status; throw e; }
+    return response;
+  }
+
+  /* ---------- Row helpers ---------- */
+  function statusOf(row, q){
+    var s = String(row[q.status] || '').trim().toLowerCase();
+    return s === 'correct' ? 'Correct' : s === 'incorrect' ? 'Incorrect' : 'Not Answered';
+  }
+  function countCorrect(row){ return QUESTIONS.filter(function(q){ return statusOf(row,q) === 'Correct'; }).length; }
+  function isCertified(row){ return String(row['Certified'] || '').trim().toLowerCase() === 'yes'; }
+  function firstOpen(row){
+    for(var i=0;i<QUESTIONS.length;i++){ if(statusOf(row,QUESTIONS[i]) !== 'Correct') return i; }
+    return 0;
+  }
+
+  /* ---------- Rendering ---------- */
+  function render(){
+    var row = state.row;
+    if(!row){ show('viewOnboard'); return; }
+    if(isCertified(row)){ renderCert(); return; }
+    show('viewQuiz');
+    var name = String(row['Name'] || '').trim();
+    $('welcomeTitle').textContent = name ? 'Welcome, ' + name : 'Welcome';
+    var correct = countCorrect(row);
+    $('progressLabel').textContent = correct + ' of 3 correct';
+    $('barFill').style.width = (correct/3*100) + '%';
+    $('barOuter').setAttribute('aria-valuenow', correct);
+    renderCards();
+    renderQuiz();
+  }
+
+  function renderCards(){
+    var box = $('cards'); box.textContent = '';
+    QUESTIONS.forEach(function(q,i){
+      var st = statusOf(state.row,q);
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'qcard';
+      if(i === state.selected) b.setAttribute('aria-current','true');
+      var t = document.createElement('strong'); t.textContent = 'Question ' + q.n;
+      var badge = document.createElement('span');
+      badge.className = 'badge ' + (st==='Correct'?'ok':st==='Incorrect'?'bad':'none');
+      badge.textContent = st === 'Incorrect' ? 'Incorrect (try again)' : st;
+      b.appendChild(t); b.appendChild(badge);
+      b.addEventListener('click', function(){
+        if(state.busy) return;
+        state.selected = i; state.choice = null; state.feedback = null; render();
+      });
+      box.appendChild(b);
+    });
+  }
+
+  function renderQuiz(){
+    var panel = $('quizPanel'); panel.textContent = '';
+    var row = state.row, q = QUESTIONS[state.selected];
+    var st = statusOf(row,q);
+    var allCorrect = countCorrect(row) === 3;
+
+    // All correct but certification write has not succeeded yet
+    if(allCorrect){
+      var h = document.createElement('h2'); h.style.marginTop = '0'; h.textContent = 'All three answers are correct!';
+      var p = document.createElement('p'); p.className = 'sub'; p.textContent = 'Your certification still needs to be saved to your record.';
+      panel.appendChild(h); panel.appendChild(p);
+      if(state.feedback){ panel.appendChild(msg(state.feedback.type, state.feedback.text)); }
+      var btn = document.createElement('button'); btn.type='button'; btn.className='primary'; btn.textContent = state.busy ? 'Saving…' : 'Save my certification';
+      btn.disabled = state.busy;
+      btn.addEventListener('click', function(){ certifyOnly(); });
+      panel.appendChild(btn);
+      return;
+    }
+
+    var lab = document.createElement('div'); lab.className = 'qnum'; lab.textContent = 'Question ' + q.n + ' of 3';
+    var qt = document.createElement('p'); qt.className = 'qtext'; qt.textContent = q.text;
+    panel.appendChild(lab); panel.appendChild(qt);
+
+    var locked = (st === 'Correct');
+    var fs = document.createElement('fieldset');
+    var lg = document.createElement('legend'); lg.textContent = 'Question ' + q.n + ' answers'; fs.appendChild(lg);
+    var saved = String(row[q.ans] || '');
+    q.options.forEach(function(opt,i){
+      var wrap = document.createElement('div'); wrap.className = 'opt';
+      var inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'q' + q.n; inp.id = 'q'+q.n+'o'+i; inp.value = opt;
+      inp.disabled = locked || state.busy;
+      inp.checked = locked ? (saved === opt) : (state.choice === opt);
+      inp.addEventListener('change', function(){ state.choice = opt; state.feedback = null; updateSubmit(); });
+      var l = document.createElement('label'); l.setAttribute('for', inp.id); l.textContent = opt;
+      wrap.appendChild(inp); wrap.appendChild(l); fs.appendChild(wrap);
+    });
+    panel.appendChild(fs);
+
+    if(state.feedback){ panel.appendChild(msg(state.feedback.type, state.feedback.text)); }
+
+    if(locked){
+      panel.appendChild(msg('ok','You answered this one correctly.'));
+      var nextIdx = QUESTIONS.findIndex(function(x){ return statusOf(row,x) !== 'Correct'; });
+      if(nextIdx > -1){
+        var nb = document.createElement('button'); nb.type='button'; nb.className='primary purple'; nb.textContent = 'Go to Question ' + QUESTIONS[nextIdx].n;
+        nb.addEventListener('click', function(){ state.selected = nextIdx; state.choice = null; state.feedback = null; render(); });
+        panel.appendChild(nb);
+      }
+      return;
+    }
+    if(st === 'Incorrect' && !state.feedback){
+      panel.appendChild(msg('info','Your last answer ("' + saved + '") was incorrect. Pick another option and try again.'));
+    }
+    var sb = document.createElement('button'); sb.type='button'; sb.id='submitBtn'; sb.className='primary';
+    sb.textContent = state.busy ? 'Saving…' : (st === 'Incorrect' ? 'Try again' : 'Submit answer');
+    sb.disabled = state.busy || !state.choice;
+    sb.addEventListener('click', submitAnswer);
+    panel.appendChild(sb);
+  }
+
+  function updateSubmit(){
+    var sb = $('submitBtn'); if(sb) sb.disabled = state.busy || !state.choice;
+  }
+  function msg(type, text){
+    var d = document.createElement('div'); d.className = 'msg ' + type; d.textContent = text;
+    d.setAttribute('role', type === 'bad' ? 'alert' : 'status');
+    return d;
+  }
+
+  function renderCert(){
+    show('viewCert');
+    var row = state.row;
+    $('certName').textContent = String(row['Name'] || '').trim();
+    var d = new Date(row['Certified At']);
+    $('certDate').textContent = isNaN(d) ? 'Certified' : 'Certified on ' + d.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'});
+    if(!state.celebrated){ state.celebrated = true; launchConfetti(); }
+  }
+
+  /* ---------- Actions ---------- */
+  async function createRecord(name){
+    await writeRow('POST', rowsUrl, { data:{
+      'Name': name,
+      'Questions Correct': 0,
+      'Certified': 'No'
+    }}, 'Could not create your record.');
+    return loadRow();
+  }
+
+  async function submitAnswer(){
+    if(state.busy || !state.choice) return;
+    var row = state.row, q = QUESTIONS[state.selected];
+    var isRight = state.choice === q.correct;
+    var data = {};
+    data[q.ans] = state.choice;
+    data[q.status] = isRight ? 'Correct' : 'Incorrect';
+
+    // Compute new totals from the saved statuses plus this answer
+    var total = QUESTIONS.reduce(function(n,x){
+      var s = (x === q) ? data[q.status] : statusOf(row,x);
+      return n + (s === 'Correct' ? 1 : 0);
+    }, 0);
+    data['Questions Correct'] = total;
+    var nowCertified = (total === 3);
+    if(nowCertified){ data['Certified'] = 'Yes'; data['Certified At'] = new Date().toISOString(); }
+
+    state.busy = true; renderQuiz();
+    try{
+      await writeRow('PATCH', rowsUrl + '/' + encodeURIComponent(row._recordId),
+        { data:data, revision:row._revision }, 'Could not save your answer.');
+      var fresh = await loadRow();
+      state.row = fresh || row;
+      state.busy = false;
+      var choiceKept = state.choice; state.choice = null;
+      if(isCertified(state.row)){ render(); return; }
+      if(isRight){
+        state.feedback = { type:'ok', text:'Correct! Saved to your record.' };
+      } else {
+        state.feedback = { type:'bad', text:'Incorrect — "' + choiceKept + '" is not right. Choose another answer and try again.' };
+      }
+      render();
+    }catch(err){
+      state.busy = false;
+      state.feedback = { type:'bad', text: err.message || 'Could not save your answer.' };
+      renderQuiz(); // selection is preserved
+    }
+  }
+
+  async function certifyOnly(){
+    if(state.busy) return;
+    state.busy = true; state.feedback = null; renderQuiz();
+    try{
+      await writeRow('PATCH', rowsUrl + '/' + encodeURIComponent(state.row._recordId), {
+        data:{ 'Questions Correct':3, 'Certified':'Yes', 'Certified At': new Date().toISOString() },
+        revision: state.row._revision
+      }, 'Could not save your certification.');
+      state.row = (await loadRow()) || state.row;
+      state.busy = false; render();
+    }catch(err){
+      state.busy = false;
+      state.feedback = { type:'bad', text: err.message || 'Could not save your certification.' };
+      renderQuiz();
+    }
+  }
+
+  $('onboardForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(state.busy) return;
+    var name = $('nameInput').value.trim();
+    var err = $('onboardError');
+    if(!name){ err.textContent = 'Please enter your name.'; err.hidden = false; $('nameInput').focus(); return; }
+    err.hidden = true; state.busy = true;
+    $('onboardBtn').disabled = true; $('onboardBtn').textContent = 'Creating…';
+    try{
+      var row = await createRecord(name);
+      if(!row) throw new Error('Your record was saved but could not be loaded. Please refresh.');
+      state.row = row; state.selected = firstOpen(row); state.celebrated = false;
+      state.busy = false; render();
+    }catch(ex){
+      state.busy = false;
+      err.textContent = ex.message || 'Could not create your record.'; err.hidden = false;
+      $('onboardBtn').disabled = false; $('onboardBtn').textContent = 'Start certification';
+    }
+  });
+
+  $('signOutBtn').addEventListener('click', function(){
+    if(window.PMGMember && PMGMember.signOut) PMGMember.signOut();
+  });
+  $('retryBtn').addEventListener('click', init);
+  $('replayBtn').addEventListener('click', launchConfetti);
+
+  /* ---------- Confetti (canvas, no library) ---------- */
+  var raf = null;
+  function launchConfetti(){
+    if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var c = $('confetti'), ctx = c.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = innerWidth * dpr; c.height = innerHeight * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var colors = ['#36D6B5','#a855ff','#ffffff','#7ef0d8','#c99bff','#f5d26b'];
+    var parts = [], N = innerWidth < 600 ? 110 : 190;
+    for(var i=0;i<N;i++){
+      parts.push({
+        x: innerWidth/2 + (Math.random()-.5)*innerWidth*.3, y: innerHeight*.35,
+        vx:(Math.random()-.5)*14, vy:-Math.random()*14-4,
+        w:6+Math.random()*7, h:4+Math.random()*6, r:Math.random()*6, vr:(Math.random()-.5)*.4,
+        c:colors[(Math.random()*colors.length)|0]
+      });
+    }
+    var start = performance.now();
+    if(raf) cancelAnimationFrame(raf);
+    (function tick(now){
+      var t = now - start;
+      ctx.clearRect(0,0,innerWidth,innerHeight);
+      parts.forEach(function(p){
+        p.vy += .22; p.vx *= .992; p.x += p.vx; p.y += p.vy; p.r += p.vr;
+        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
+        ctx.globalAlpha = Math.max(0, 1 - Math.max(0,t-3500)/1500);
+        ctx.fillStyle = p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
+      });
+      if(t < 5000){ raf = requestAnimationFrame(tick); }
+      else { ctx.clearRect(0,0,innerWidth,innerHeight); raf = null; }
+    })(start);
+  }
+
+  /* ---------- Init ---------- */
+  async function init(){
+    show('viewLoading');
+    try{
+      if(!window.PMGMember) throw new Error('The member workspace is not available yet. Please refresh the page.');
+      await PMGMember.ready; // platform gate finishes SMS sign-in first
+      dataUrl = meta('sheet-data-url'); rowsUrl = meta('sheet-rows-url');
+      if(!dataUrl || !rowsUrl) throw new Error('This page is not linked to a Google Sheet yet. The owner needs to connect the Members tab.');
+      var row = await loadRow();
+      state.row = row;
+      state.selected = row ? firstOpen(row) : 0;
+      render();
+    }catch(err){
+      $('errorText').textContent = err.message || 'Something went wrong.';
+      show('viewError');
+    }
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+</body>
+</html>
